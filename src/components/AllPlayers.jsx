@@ -1,11 +1,13 @@
 import { fetchPlayers } from "../API/ajaxHelpers";
 import {useState, useEffect } from "react";
 import PlayerRow from "./PlayerRow";
+import SearchBar from './SearchBar';
 
 
 export default function AllPlayers() {
 
     const [players, setPlayers] = useState([]);
+    const [filteredPlayers, setFilteredPlayers] = useState([])
 
     useEffect(() => {
 
@@ -14,6 +16,7 @@ export default function AllPlayers() {
                 const playerData = await fetchPlayers();
                  
                 setPlayers(playerData);
+                setFilteredPlayers(playerData);
             }
 
             catch(err) {
@@ -27,13 +30,19 @@ export default function AllPlayers() {
 
     },[])
 
-
+    const handleSearch = (query) => {
+        const filtered = players.filter((player) =>
+          player.name.toLowerCase().includes(query.toLowerCase())
+        );
+        setFilteredPlayers(filtered);
+      };
 
     return(
         <table>
         <thead>
           <tr>
             <th colSpan="3">Players</th>
+            <SearchBar onSearch={handleSearch} />
           </tr>
         </thead>
         <tbody>
@@ -42,10 +51,10 @@ export default function AllPlayers() {
             <td>Picture</td>
             <td>Breed</td>
           </tr>
-          {players.map((player) => {
+          {filteredPlayers.map((player) => {
 
-              return <PlayerRow key={player.id} player={player} />;
-              
+            return <PlayerRow key={player.id} player={player} />;
+
             })}
         </tbody>
       </table>
