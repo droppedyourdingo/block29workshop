@@ -45,3 +45,82 @@ body > div {
   align-items: center;
   justify-content: center;
 }
+
+#heading {
+  position: absolute; 
+  top: 0;
+}
+
+.playerCard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.images {
+  max-width: 10%;
+  max-height: 10%;
+  height: auto;
+}
+
+.pDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pDetails h1 {
+  margin-top: 20px;
+
+}
+
+.pDetails img {
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.pDetails p {
+  font-size: 20px;
+
+}
+
+.newPlayerDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.newPlayerDetails h2 {
+  margin-bottom: 20px;
+}
+
+.newPlayerDetails form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newPlayerDetails label {
+  margin-top: 10px;
+}
+
+.newPlayerDetails input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.newPlayerDetails button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+
+}

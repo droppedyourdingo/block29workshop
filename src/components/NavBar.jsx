@@ -6,6 +6,7 @@ export default function NavBar() {
         <div id="navbar">
             <Link to="/">Home</Link>
             <Link to="/players/:id">Player</Link>
+            <Link to="/new-player">Create a player</Link>
         </div>
     )
 }
