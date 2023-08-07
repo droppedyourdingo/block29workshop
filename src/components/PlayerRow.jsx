@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import React from "react";
+
 
 export default function PlayerRow({player}) {
     const navigate = useNavigate();
