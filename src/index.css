@@ -45,3 +45,23 @@ body > div {
   align-items: center;
   justify-content: center;
 }
+
+#heading {
+  position: absolute; 
+  top: 0;
+}
+
+.playerCard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.images {
+  max-width: 10%;
+  max-height: 10%;
+  height: auto;
+}

@@ -1,5 +1,6 @@
-import { fetchPlayers } from "../API/ajaxHelpers"
-import {useState, useEffect } from "react"
+import { fetchPlayers } from "../API/ajaxHelpers";
+import {useState, useEffect } from "react";
+import PlayerRow from "./PlayerRow";
 
 
 export default function AllPlayers() {
@@ -29,15 +30,24 @@ export default function AllPlayers() {
 
 
     return(
-        <div>
-            <h1>All Players</h1>
-            <ul>
-            {players.map((player) => (
-                
-                <li key={player.id}>{player.name}</li>
+        <table>
+        <thead>
+          <tr>
+            <th colSpan="3">Players</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Picture</td>
+            <td>Breed</td>
+          </tr>
+          {players.map((player) => {
 
-            ))}
-            </ul>
-        </div>
+              return <PlayerRow key={player.id} player={player} />;
+              
+            })}
+        </tbody>
+      </table>
     )
 }
